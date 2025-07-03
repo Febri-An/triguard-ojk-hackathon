@@ -72,10 +72,14 @@ module.exports = {
 };
 
 // For testing purpose
-if (require.main === module) {
-  (async () => {
-    const contractPath = process.argv[2];
-    const result = await runSecurityAnalysis(contractPath);
-    console.log(JSON.stringify(result, null, 2));
-  })();
-}
+// if (require.main === module) {
+//   try {
+//     (async () => {
+//       const contractPath = process.argv[2];
+//       const result = await runSecurityAnalysis(contractPath);
+//       console.log('Security Analysis Result:', JSON.stringify(result, null, 2));
+//     })();
+//   } catch (error) {
+//     console.error('Error running security analysis:', error);
+//   }
+// }
