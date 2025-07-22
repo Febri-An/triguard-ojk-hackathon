@@ -65,14 +65,18 @@ module.exports = {
   uploadJSONToPinata,
 };
 
-// Run only if executed directly
+// // Run only if executed directly
 // if (require.main === module) {
 //   (async () => {
-//     const mythril = await uploadFileToPinata("mythril_report.json")
-//     const slither = await uploadFileToPinata("slither_report.json")
-//     const ipfsHash = {
-//       mythril: mythril.ipfsHash,
-//       slither: slither.ipfsHash,
+//     try {
+//       console.log("Starting upload process...");
+//       const mythril = await uploadFileToPinata("mythril_report.json");
+//       const slither = await uploadFileToPinata("slither_report.json");
+      
+//       console.log("Mythril IPFS Hash:", mythril.ipfsHash);
+//       console.log("Slither IPFS Hash:", slither.ipfsHash);
+//     } catch (error) {
+//       console.error("Main execution error:", error);
 //     }
-//   })
+//   })();
 // }
