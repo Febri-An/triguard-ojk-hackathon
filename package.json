@@ -9,16 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@supabase/supabase-js": "^2.50.0",
     "lucide-react": "^0.513.0",
     "next": "15.3.3",
+=======
+    "next": "15.3.3",
+    "pinata-web3": "^0.5.4",
+>>>>>>> a4b20dc0a377569663e01fdb93878fe228adc9ab
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+<<<<<<< HEAD
     "@types/node": "^20",
+=======
+    "@types/node": "^20.19.0",
+>>>>>>> a4b20dc0a377569663e01fdb93878fe228adc9ab
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

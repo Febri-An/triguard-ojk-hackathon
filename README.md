@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🔍 Smart Contract Auditor - Hackathon Project
 
-## Getting Started
+Smart Contract Auditor adalah platform berbasis web untuk melakukan audit keamanan smart contract secara otomatis menggunakan [Mythril](https://github.com/ConsenSys/mythril) dan [Slither](https://github.com/crytic/slither). Dirancang untuk memberikan hasil analisa keamanan yang cepat, mudah, dan transparan dengan integrasi IPFS dan blockchain.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 👤 User Dashboard
+- 📤 Upload Smart Contract (.sol)
+- 🧠 Audit otomatis dengan Slither & Mythril
+- 📊 Hasil berupa JSON + Visual Flag:
+  - 🟢 Aman
+  - 🟡 Perlu Diperhatikan
+  - 🔴 Berbahaya
+- 💾 Download hasil audit
+- 🌐 Push hasil audit ke IPFS
+- 🔗 Simpan hash IPFS ke Smart Contract (optional)
+- 🔐 Integrasi Wallet (MetaMask)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🖼️ Workflow
 
-## Learn More
+1. **Masuk Dashboard**
+2. **Upload file Smart Contract (.sol)**
+3. **Connect Wallet (MetaMask)**
+4. **Klik tombol Audit**
+5. **Sistem menjalankan Mythril & Slither di backend**
+6. **Hasil audit dalam bentuk `.json` di-generate**
+7. **Flag keamanan ditentukan (Merah/Kuning/Hijau)**
+8. **User bisa download hasil audit**
+9. **Hasil audit di-push ke IPFS (dengan kepemilikan user)**
+10. **User bisa menyimpan hash IPFS ke Smart Contract untuk validasi on-chain (butuh approve dan gas fee)**
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Frontend**: React + Tailwind
+- **Backend**: Node.js (Express)
+- **Smart Contract**: Solidity
+- **Audit Tools**: Mythril, Slither
+- **Storage**: IPFS via Pinata/Web3.Storage
+- **Wallet Auth**: MetaMask + Ethers.js
+- **On-Chain Certify**: Smart Contract Notary
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Output
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Setiap audit menghasilkan:
+- `audit-result.json`: Detail temuan dari Slither & Mythril
+- `flag`: Status keamanan (`green`, `yellow`, `red`)
+- `ipfsHash`: Hash file audit yang disimpan ke IPFS
+- `txHash` (optional): Hash transaksi pencatatan on-chain
+
+---
+
+## 🧪 Example Flag System
+
+| Flag | Description |
+|------|-------------|
+| 🟢 Green | No major issues found |
+| 🟡 Yellow | Medium severity issues |
+| 🔴 Red | High severity or exploitable |
+
+---
+
+## ✅ Future Improvements
+
+- [ ] Integrasi GPT untuk menjelaskan hasil audit dengan bahasa manusia
+- [ ] Auto-fix recommendation untuk beberapa vulnerability
+- [ ] Sistem ranking untuk developer berdasarkan jumlah audit
+
+---
+
+## 💡 License
+
+MIT - Feel free to use or fork!
